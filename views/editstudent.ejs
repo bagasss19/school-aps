@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <%- include ("./partials/header.ejs", {title : "Edit Student"}) %>
+    <body>
+      <form action="/students/<%= data[0].id %>/edit" method="POST">
+        <label for="first_name">First name:</label><br>
+        <input type="text" name="first_name" value="<%= data[0].first_name %>"><br>
+        
+        <label for="last_name">Last name:</label><br>
+        <input type="text" name="last_name" value="<%= data[0].last_name %>"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" value="<%= data[0].email %>"><br><br>
+
+        <% if (data[0].gender == 'male') {%>
+        <input type="radio" name="gender" value="male" checked>
+        <label for="male">Male</label><br>
+        <input type="radio" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <% } else {%>
+
+        <input type="radio" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" name="gender" value="female" checked>
+        <label for="female">Female</label><br><br>
+
+        <% } %>
+
+        <label for="birth_date">Birth Date:</label><br>
+        <input type="text" name="birth_date" value="<%= data[0].birth_date %>"><br><br>
+
+        <input type="submit" value="Submit">
+      </form> 
+    </body>
+</html>

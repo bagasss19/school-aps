@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <%- include ("./partials/header.ejs", {title : "Subject List"}) %>
+    <body>
+        <table style="border: 1px;">
+            <thead>
+              <th>Id</th>
+              <th>Subject Name</th>
+            </thead>
+            <% data.forEach(x => { %>
+            <tbody>
+              <td><%= x.id %></td>
+              <td><%= x.subject_name %></td>
+            </tbody>
+            <% }) %>
+          </table>
+    </body>
+</html>
